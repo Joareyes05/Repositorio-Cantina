@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <form action="" method="POST" id="form">
+        <div class="form">
+            <h1 class="titulo1">Cantina </h1><h1 class="titulo2">Ya!</h1>
+            <div class="grupo">
+                <input type="text" name="" id="name" required><span class="barra"></span>
+                <label for="">Nombre</label>
+            </div>
+            <div class="grupo">
+                <input type="text" name="" id="email" required><span class="barra"></span>
+                <label for="">Email</label>
+            </div>
+            <div class="grupo">
+                <input type="password" name="" id="password" required><span class="barra"></span>
+                <label for="">Password</label>
+            </div>
+
+            <button type="submit" onClick="validar()">Suscribirte</button>
+        </div>
+    </form>
+    <script>
+        function validar(){
+            var email = document.getElementById("email").value;
+            comprobarEmail(email);
+
+        }
+        function comprobarEmail(email) {
+        var arroba = false;
+        var punto = false;
+        for (var i = 0; i < email.length; i++) {
+                if (email.charAt(i) == "@") {
+                    arroba = true;
+                }
+                if (email.charAt(i) == ".") {
+                    punto = true;
+                }
+                }
+        if (arroba == false && punto == false) {
+                alert("Faltan los símbolos '@' y el '.'");
+                } else {
+                    if (arroba == false) {
+                        alert("Falta el símbolo '@' en el correo electrónico");
+                    }
+                    if (punto == false) {
+                        alert("Falta el símbolo '.' en el correo electrónico");
+                    }
+                }
+                if (arroba==true && punto==true){
+                    window.open("tienda.html");
+                }
+            }
+    </script>
+</body>
+</html>
